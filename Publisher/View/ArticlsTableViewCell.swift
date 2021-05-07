@@ -19,7 +19,7 @@ class ArticlsTableViewCell: UITableViewCell {
 
     let date = NSDate(timeIntervalSince1970: article.createdTime)
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "YYYY.MM.dd hh:mm "
+    dateFormatter.dateFormat = "YYYY.MM.dd hh:mm"
 
     titleLabel.text = article.title
     nameLabel.text = article.author.name

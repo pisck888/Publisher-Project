@@ -58,10 +58,20 @@ class ViewController: UIViewController {
 //    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0) {
 //      blackView.alpha = 0.5
 //    }
-    view.addSubview(postArticlesView)
     postArticlesView.frame.size.width = view.frame.maxX * 0.9
     postArticlesView.frame.size.height = view.frame.maxY * 0.6
     postArticlesView.center = view.center
+    postArticlesView.layer.cornerRadius = 5
+    postArticlesView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+    view.addSubview(postArticlesView)
+
+    UIView.animate(withDuration: 0.5,
+                   delay: 0,
+                   usingSpringWithDamping: 0.5,
+                   initialSpringVelocity: 0.5,
+                   options: .curveLinear) {
+      self.postArticlesView.transform = .identity
+    }
   }
 
   func removePostArticlesView() {
