@@ -26,6 +26,7 @@ class ViewController: UIViewController {
       tableView.reloadData()
     }
   }
+  let blackView = UIView(frame: UIScreen.main.bounds)
 
   let currentUser = "wayne@school.appworks.tw"
 
@@ -51,19 +52,22 @@ class ViewController: UIViewController {
   }
 
   func setPostArticlesView() {
-//    let blackView = UIView(frame: UIScreen.main.bounds)
-//    blackView.backgroundColor = .black
-//    blackView.alpha = 0
-//    presentingViewController?.view.addSubview(blackView)
-//    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.5, delay: 0) {
-//      blackView.alpha = 0.5
-//    }
+
+    blackView.backgroundColor = .black
+    blackView.alpha = 0
+    view.addSubview(blackView)
+    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0) {
+      self.blackView.alpha = 0.5
+    }
+
     postArticlesView.frame.size.width = view.frame.maxX * 0.9
     postArticlesView.frame.size.height = view.frame.maxY * 0.6
     postArticlesView.center = view.center
     postArticlesView.layer.cornerRadius = 5
     postArticlesView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
     view.addSubview(postArticlesView)
+
+    postButton.layer.cornerRadius = 5
 
     UIView.animate(withDuration: 0.5,
                    delay: 0,
@@ -79,6 +83,7 @@ class ViewController: UIViewController {
     categoryTextField.text = ""
     contentTextField.text = ""
     postArticlesView.removeFromSuperview()
+    blackView.removeFromSuperview()
   }
 
   @objc func pullToRefresh() {
@@ -114,7 +119,6 @@ class ViewController: UIViewController {
       return
     }
 
-
     ArticlesProvider.shared.postArticles(
       title: titleTextField.text ?? "title",
       category: categoryTextField.text ?? "Beauty",
@@ -122,6 +126,13 @@ class ViewController: UIViewController {
       email: currentUser
     )
     removePostArticlesView()
+  }
+
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let touch = touches.first
+    if touch?.view == blackView {
+      removePostArticlesView()
+    }
   }
 
 }

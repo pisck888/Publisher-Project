@@ -23,10 +23,16 @@ class ArticlsTableViewCell: UITableViewCell {
 
     titleLabel.text = article.title
     nameLabel.text = article.author.name
-    categoryLabel.text = article.category
     contentLabel.text = article.content
     timeLabel.text = dateFormatter.string(from: date as Date)
-    
+    categoryLabel.text = " \(article.category) "
+    categoryLabel.layer.cornerRadius = 5
+    categoryLabel.clipsToBounds = true
+    categoryLabel.textColor = randomColor(colors: [.systemBlue, .systemGreen, .systemOrange, .systemPink])
+  }
+
+  func randomColor(colors: [UIColor]) -> UIColor {
+    return colors[Int.random(in: 0...colors.count - 1)]
   }
   
 }
