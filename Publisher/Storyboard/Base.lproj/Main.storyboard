@@ -118,13 +118,66 @@
                     </view>
                     <navigationItem key="navigationItem" title="Publisher" id="ubh-bK-GKn"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="taa-iH-S7U" id="Skj-rt-njP"/>
+                        <outlet property="contentTextField" destination="z81-F4-v2Z" id="ELr-Wl-PzN"/>
                         <outlet property="plusButton" destination="8LC-cT-NNs" id="L60-ua-lDD"/>
+                        <outlet property="postArticlesView" destination="fTa-cC-u0Z" id="JZc-l8-bM5"/>
+                        <outlet property="postButton" destination="W4C-Cp-LQq" id="0je-xf-etq"/>
                         <outlet property="tableView" destination="LYn-fi-Ta9" id="KhK-xA-FtW"/>
+                        <outlet property="titleTextField" destination="prN-Qi-Mpo" id="W5u-bW-Knj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="fTa-cC-u0Z">
+                    <rect key="frame" x="0.0" y="0.0" width="344" height="574"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prN-Qi-Mpo">
+                            <rect key="frame" x="4" y="4" width="336" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z81-F4-v2Z">
+                            <rect key="frame" x="4" y="80" width="336" height="456"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="taa-iH-S7U">
+                            <rect key="frame" x="4" y="42" width="336" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4C-Cp-LQq">
+                            <rect key="frame" x="4" y="540" width="336" height="30"/>
+                            <color key="backgroundColor" name="customPurple"/>
+                            <state key="normal" title="Post">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="pressPostButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90r-0X-GqC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="xFD-oT-wB6"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                    <constraints>
+                        <constraint firstItem="prN-Qi-Mpo" firstAttribute="leading" secondItem="fTa-cC-u0Z" secondAttribute="leading" constant="4" id="0EK-mp-KfF"/>
+                        <constraint firstItem="taa-iH-S7U" firstAttribute="top" secondItem="prN-Qi-Mpo" secondAttribute="bottom" constant="4" id="3dv-IP-vpj"/>
+                        <constraint firstItem="xFD-oT-wB6" firstAttribute="trailing" secondItem="W4C-Cp-LQq" secondAttribute="trailing" constant="4" id="BFA-oF-6US"/>
+                        <constraint firstItem="xFD-oT-wB6" firstAttribute="bottom" secondItem="W4C-Cp-LQq" secondAttribute="bottom" constant="4" id="Bxx-NU-DGg"/>
+                        <constraint firstItem="z81-F4-v2Z" firstAttribute="top" secondItem="taa-iH-S7U" secondAttribute="bottom" constant="4" id="KVz-r8-88D"/>
+                        <constraint firstItem="W4C-Cp-LQq" firstAttribute="top" secondItem="z81-F4-v2Z" secondAttribute="bottom" constant="4" id="Lu8-Ha-OOf"/>
+                        <constraint firstItem="z81-F4-v2Z" firstAttribute="leading" secondItem="fTa-cC-u0Z" secondAttribute="leading" constant="4" id="Lvn-yX-Xd7"/>
+                        <constraint firstItem="prN-Qi-Mpo" firstAttribute="top" secondItem="fTa-cC-u0Z" secondAttribute="top" constant="4" id="M2t-J8-lnY"/>
+                        <constraint firstItem="W4C-Cp-LQq" firstAttribute="leading" secondItem="xFD-oT-wB6" secondAttribute="leading" constant="4" id="dur-Yg-ez3"/>
+                        <constraint firstItem="taa-iH-S7U" firstAttribute="leading" secondItem="fTa-cC-u0Z" secondAttribute="leading" constant="4" id="mfj-EW-WEo"/>
+                        <constraint firstAttribute="trailing" secondItem="taa-iH-S7U" secondAttribute="trailing" constant="4" id="pcY-d1-pCC"/>
+                        <constraint firstAttribute="trailing" secondItem="z81-F4-v2Z" secondAttribute="trailing" constant="4" id="qXK-eI-L5T"/>
+                        <constraint firstAttribute="trailing" secondItem="prN-Qi-Mpo" secondAttribute="trailing" constant="4" id="ulu-fA-iaj"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="729" y="98"/>
+            <point key="canvasLocation" x="728.98550724637687" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6PC-CX-stL">
@@ -156,6 +209,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
